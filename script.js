@@ -64,12 +64,10 @@ function newGame() {
     player.score = computer.score = 0;
     gameState = 'started';
     setGameElements();
-	}
+
     playerNameElem.innerHTML = player.name;
-    function setGamePoints() {
-    playerPointsElem.innerHTML = player.score;
-    computerPointsElem.innerHTML = computer.score;
-	}
+    setGamePoints();
+  }	
 }
 
 //Function holding player's and computer's pick
@@ -81,6 +79,12 @@ function playerPick(playerPick) {
 
     checkRoundWinner(playerPick, computerPick);
 }
+
+//Function setting game points
+function setGamePoints() {
+    playerPointsElem.innerHTML = player.score;
+    computerPointsElem.innerHTML = computer.score;
+	}
 
 //Function setting a random computer's pick
 function getComputerPick() {
