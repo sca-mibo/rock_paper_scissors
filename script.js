@@ -78,6 +78,7 @@ function playerPick(playerPick) {
     computerPickElem.innerHTML = computerPick;
 
     checkRoundWinner(playerPick, computerPick);
+    setGamePoints();
 }
 
 //Function setting game points
