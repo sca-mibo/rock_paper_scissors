@@ -67,7 +67,7 @@ function newGame() {
 
     playerNameElem.innerHTML = player.name;
     setGamePoints();
-  }	
+    }	
 }
 
 //Function holding player's and computer's pick
@@ -79,6 +79,7 @@ function playerPick(playerPick) {
 
     checkRoundWinner(playerPick, computerPick);
     setGamePoints();
+    setGameWinner();
 }
 
 //Function setting game points
@@ -118,12 +119,33 @@ function checkRoundWinner(playerPick, computerPick) {
     }
 
     if (winnerIs == 'player') {
-        playerResultElem.innerHTML = "Win!";
+        playerResultElem.innerHTML = "Won!";
+        computerResultElem.innerHTML = "Lost!";
         player.score++;
     } else if (winnerIs == 'computer') {
-        computerResultElem.innerHTML = "Win!";
+        computerResultElem.innerHTML = "Won!";
+        playerResultElem.innerHTML = "Lost!";
         computer.score++;
     }
-
+  
 }
 
+//Function informing about the winner when one of the player scores 10 points
+function setGameWinner() {
+	if (computer.score == 10) {
+		alert('Computer is the winner by' + ' ' + computer.score + 'to' + player.score);
+		computer.score = 0;
+		player.score = 0;
+		playerPointsElem.innerHTML = player.score;
+    	computerPointsElem.innerHTML = computer.score;
+    	}
+    else if
+    	(player.score == 10) {
+    	alert(player.name + 'is the winner by' + ' ' + player.score + 'to' + computer.score);
+		computer.score = 0;
+		player.score = 0;
+		playerPointsElem.innerHTML = player.score;
+    	computerPointsElem.innerHTML = computer.score;
+    	}
+
+}
