@@ -134,18 +134,14 @@ function checkRoundWinner(playerPick, computerPick) {
 function setGameWinner() {
 	if (computer.score == 10) {
 		alert('Computer is the winner by' + ' ' + computer.score + 'to' + player.score);
-		computer.score = 0;
-		player.score = 0;
-		playerPointsElem.innerHTML = player.score;
-    	computerPointsElem.innerHTML = computer.score;
+		gameState = 'ended';
+    	setGameElements();
     	}
     else if
     	(player.score == 10) {
-    	alert(player.name + 'is the winner by' + ' ' + player.score + 'to' + computer.score);
-		computer.score = 0;
-		player.score = 0;
-		playerPointsElem.innerHTML = player.score;
-    	computerPointsElem.innerHTML = computer.score;
+    	alert(player.name + ' ' + 'is the winner by' + ' ' + player.score + 'to' + computer.score);
+		gameState = 'ended';
+    	setGameElements();
     	}
 
 }
