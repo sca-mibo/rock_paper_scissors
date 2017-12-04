@@ -6,6 +6,24 @@ newGameBtn.addEventListener('click', newGame);
 var pickRock = document.getElementById('js-playerPick_rock'),
 	pickPaper = document.getElementById('js-playerPick_paper'),
 	pickScissors = document.getElementById('js-playerPick_scissors');
+
+//Variables showing game elements
+var newGameElem = document.getElementById('js-newGameElement'),
+	pickElem = document.getElementById('js-playerPickElement'),
+	resultsElem = document.getElementById('js-resultsTableElement');
+
+//Variables showing game result and player names
+var playerPointsElem = document.getElementById('js-playerPoints'),
+    playerNameElem = document.getElementById('js-playerName'),
+    computerPointsElem = document.getElementById('js-computerPoints');
+
+//Defining variables for storing player and computer selections as well as results
+var playerPickElem = document.getElementById('js-playerPick'),
+    computerPickElem = document.getElementById('js-computerPick'),
+    playerResultElem = document.getElementById('js-playerResult'),
+    computerResultElem = document.getElementById('js-computerResult');
+
+//Functions deployed while clicking on rock, paper, scissors buttons
 pickRock.addEventListener('click', function() {
 	playerPick('rock');
 });
@@ -16,6 +34,7 @@ pickScissors.addEventListener('click', function () {
 	playerPick('scissors');
 });
 
+
 //Game state and score
 var gameState = 'notStarted',
 	player = {
@@ -25,11 +44,6 @@ var gameState = 'notStarted',
 	computer = {
 		score: 0 
 	};
-
-//Variables showing game elements
-var newGameElem = document.getElementById('js-newGameElement'),
-	pickElem = document.getElementById('js-playerPickElement'),
-	resultsElem = document.getElementById('js-resultsTableElement');
 
 //Function steering visibility of game elements
 function setGameElements() {
@@ -52,11 +66,6 @@ function setGameElements() {
 //Deploying setGameElements function
 setGameElements();
 
-//Variables showing game result and player names
-var playerPointsElem = document.getElementById('js-playerPoints'),
-    playerNameElem = document.getElementById('js-playerName'),
-    computerPointsElem = document.getElementById('js-computerPoints');
-
 //Function deployed after clicking on New Game button
 function newGame() {
   player.name = prompt('Please enter your name', 'player name');
@@ -67,6 +76,12 @@ function newGame() {
 
     playerNameElem.innerHTML = player.name;
     setGamePoints();
+
+    playerPickElem.innerHTML = 'Player selection',
+    computerPickElem.innerHTML = 'Computer selection',
+    playerResultElem.innerHTML = 'Player score',
+    computerResultElem.innerHTML = 'Computer score';
+
     }	
 }
 
@@ -93,12 +108,6 @@ function getComputerPick() {
     var possiblePicks = ['rock', 'paper', 'scissors'];
     return possiblePicks[Math.floor(Math.random()*3)];
 }
-
-//Defining variables for storing player and computer selections as well as results
-var playerPickElem = document.getElementById('js-playerPick'),
-    computerPickElem = document.getElementById('js-computerPick'),
-    playerResultElem = document.getElementById('js-playerResult'),
-    computerResultElem = document.getElementById('js-computerResult');
 
 //Function checking who is the winner and setting the winner's score
 function checkRoundWinner(playerPick, computerPick) {
@@ -130,7 +139,7 @@ function checkRoundWinner(playerPick, computerPick) {
   
 }
 
-//Function informing about the winner when one of the player scores 10 points
+//Function informing about the winner when one of the players scores 10 points
 function setGameWinner() {
 	if (computer.score == 10) {
 		alert('Computer is the winner by' + ' ' + computer.score + 'to' + player.score);
