@@ -1,3 +1,18 @@
 .container {
 	padding: 15px 0;
 }
+	[class*="example"]{
+  	min-height:500px;
+}
+.example-1 {
+	background-color:#59ABE3;
+}
+.example-2 {
+	background-color:#2ECC71;
+}
+.example-3 {
+	background-color: #F89406;
+}
+.example-4 {
+	background-color:#EB974E;
+}

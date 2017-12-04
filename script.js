@@ -34,6 +34,9 @@ pickScissors.addEventListener('click', function () {
 	playerPick('scissors');
 });
 
+//Variable used to show who the winner is in modal dialog
+var gameWinnerInfo = document.getElementById('gameWinnerInfo');
+
 
 //Game state and score
 var gameState = 'notStarted',
@@ -137,7 +140,9 @@ function checkRoundWinner(playerPick, computerPick) {
 //Function informing about the winner when one of the players scores 10 points
 function setGameWinner() {
 	if (computer.score == 10) {
-		alert('Computer is the winner by' + ' ' + computer.score + 'to' + player.score);
+		//alert('Computer is the winner by' + ' ' + computer.score + 'to' + player.score);
+		$('#gameWinnerModal').modal('show');
+		gameWinnerInfo.innerHTML = 'Computer is the winner by' + ' ' + computer.score + ' ' + 'to' + ' ' + player.score;
 		gameState = 'ended';
     	setGameElements();
     	playerPickElem.innerHTML = 'Player selection',
@@ -147,7 +152,9 @@ function setGameWinner() {
     	}
     else if
     	(player.score == 10) {
-    	alert(player.name + ' ' + 'is the winner by' + ' ' + player.score + 'to' + computer.score);
+    	//alert(player.name + ' ' + 'is the winner by' + ' ' + player.score + 'to' + computer.score);
+    	$('#gameWinnerModal').modal('show');
+    	gameWinnerInfo.innerHTML = player.name + ' ' + 'is the winner by' + ' ' + player.score + ' ' + 'to' + ' ' + computer.score;
 		gameState = 'ended';
     	setGameElements();
     	playerPickElem.innerHTML = 'Player selection',
