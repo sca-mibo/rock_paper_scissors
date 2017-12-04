@@ -76,12 +76,7 @@ function newGame() {
 
     playerNameElem.innerHTML = player.name;
     setGamePoints();
-
-    playerPickElem.innerHTML = 'Player selection',
-    computerPickElem.innerHTML = 'Computer selection',
-    playerResultElem.innerHTML = 'Player score',
-    computerResultElem.innerHTML = 'Computer score';
-
+  
     }	
 }
 
@@ -145,12 +140,20 @@ function setGameWinner() {
 		alert('Computer is the winner by' + ' ' + computer.score + 'to' + player.score);
 		gameState = 'ended';
     	setGameElements();
+    	playerPickElem.innerHTML = 'Player selection',
+	    computerPickElem.innerHTML = 'Computer selection',
+	    playerResultElem.innerHTML = 'Player score',
+	    computerResultElem.innerHTML = 'Computer score';
     	}
     else if
     	(player.score == 10) {
     	alert(player.name + ' ' + 'is the winner by' + ' ' + player.score + 'to' + computer.score);
 		gameState = 'ended';
     	setGameElements();
+    	playerPickElem.innerHTML = 'Player selection',
+	    computerPickElem.innerHTML = 'Computer selection',
+	    playerResultElem.innerHTML = 'Player score',
+	    computerResultElem.innerHTML = 'Computer score';
     	}
 
 }
