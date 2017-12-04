@@ -23,6 +23,9 @@ var playerPickElem = document.getElementById('js-playerPick'),
     playerResultElem = document.getElementById('js-playerResult'),
     computerResultElem = document.getElementById('js-computerResult');
 
+//Variable used to show who the winner in modal dialog
+var gameWinnerInfo = document.getElementById('gameWinnerInfo');
+
 //Functions deployed while clicking on rock, paper, scissors buttons
 pickRock.addEventListener('click', function() {
 	playerPick('rock');
@@ -33,10 +36,6 @@ pickPaper.addEventListener('click', function() {
 pickScissors.addEventListener('click', function () {
 	playerPick('scissors');
 });
-
-//Variable used to show who the winner is in modal dialog
-var gameWinnerInfo = document.getElementById('gameWinnerInfo');
-
 
 //Game state and score
 var gameState = 'notStarted',
