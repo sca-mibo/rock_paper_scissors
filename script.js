@@ -23,7 +23,7 @@ var playerPickElem = document.getElementById('js-playerPick'),
     playerResultElem = document.getElementById('js-playerResult'),
     computerResultElem = document.getElementById('js-computerResult');
 
-//Variable used to show who the winner in modal dialog
+//Variable used to show the winner in modal dialog
 var gameWinnerInfo = document.getElementById('gameWinnerInfo');
 
 //Functions deployed while clicking on rock, paper, scissors buttons
