@@ -140,7 +140,6 @@ function checkRoundWinner(playerPick, computerPick) {
 //Function informing about the winner when one of the players scores 10 points
 function setGameWinner() {
 	if (computer.score == 10) {
-		//alert('Computer is the winner by' + ' ' + computer.score + 'to' + player.score);
 		$('#gameWinnerModal').modal('show');
 		gameWinnerInfo.innerHTML = 'Computer is the winner by' + ' ' + computer.score + ' ' + 'to' + ' ' + player.score;
 		gameState = 'ended';
@@ -152,7 +151,6 @@ function setGameWinner() {
     	}
     else if
     	(player.score == 10) {
-    	//alert(player.name + ' ' + 'is the winner by' + ' ' + player.score + 'to' + computer.score);
     	$('#gameWinnerModal').modal('show');
     	gameWinnerInfo.innerHTML = player.name + ' ' + 'is the winner by' + ' ' + player.score + ' ' + 'to' + ' ' + computer.score;
 		gameState = 'ended';
